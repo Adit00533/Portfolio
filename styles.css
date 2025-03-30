@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+}
+
+header {
+    background: #1e1e1e; /* Darker header */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    position: relative; /* Positioning context for pseudo-elements */
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s, background 0.3s; /* Added background transition */
+    padding: 5px 0; /* Adding padding for better spacing */
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    height: 3px; /* Underline height */
+    background: transparent; /* Initially transparent */
+    transition: background 0.3s; /* Smooth transition for underline */
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Positioning of the underline */
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* Gold color on hover */
+}
+
+nav ul li:nth-child(1) a:hover::after {
+    background: linear-gradient(90deg, #ff4081, #ffd700); /* First link hover effect */
+}
+
+nav ul li:nth-child(2) a:hover::after {
+    background: linear-gradient(90deg, #ffd700, #00bcd4); /* Second link hover effect */
+}
+
+nav ul li:nth-child(3) a:hover::after {
+    background: linear-gradient(90deg, #00bcd4, #4caf50); /* Third link hover effect */
+}
+
+nav ul li:nth-child(4) a:hover::after {
+    background: linear-gradient(90deg, #4caf50, #ff4081); /* Fourth link hover effect */
+}
+
+/* Optional: To create a smooth transition for hover effects */
+nav ul li a:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+section {
+    padding: 20px;
+    margin: 10px;
+    background: #1e1e1e; /* Darker section background */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #444; /* Lighter border for project boxes */
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #2a2a2a; /* Darker background for projects */
+}
+
+.project:hover {
+    transform: scale(1.05); /* Slight scale effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+}
+
+button {
+    background: #35424a; /* Base button color */
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #ff4081; /* Pink color on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #1e1e1e;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Additional styles for fonts */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif; /* Heading font */
+    color: #ffd700; /* Gold color for headings */
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+h3 {
+    margin-top: 10px;
+    color: #ff4081; /* Different color for subheadings */
+}
+
+a {
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff4081; /* Pink color for links */
+}

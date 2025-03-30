@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aditya Vijjapu's personal portfolio. Ex-Intern at Wissen Infotech, Data Science enthusiast, and final-year CSE student at Amrita School of Engineering.">
+    <meta name="author" content="Aditya Vijjapu">
+    <title>Aditya Vijjapu - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+        header h1 {
+            text-align: center;
+            margin: 0;
+            color: #d4af37; /* Dark Yellow for Aditya Vijjapu */
+        }
+        nav {
+            text-align: center;
+            margin: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: inline-block;
+            position: relative;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        /* Navigation Hover Effects */
+        nav ul li a::after {
+            content: '';
+            display: block;
+            height: 3px;
+            background: transparent;
+            transition: background 0.3s;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        nav ul li:nth-child(1) a:hover::after {
+            background: linear-gradient(90deg, #ff4081, #ffd700);
+        }
+        nav ul li:nth-child(2) a:hover::after {
+            background: linear-gradient(90deg, #ffd700, #00bcd4);
+        }
+        nav ul li:nth-child(3) a:hover::after {
+            background: linear-gradient(90deg, #00bcd4, #4caf50);
+        }
+        nav ul li:nth-child(4) a:hover::after {
+            background: linear-gradient(90deg, #4caf50, #ff4081);
+        }
+
+        /* Section Styles */
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #222;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Heading Styles */
+        h2, h3 {
+            color: #d4af37;
+        }
+
+        /* Dark Pink for Data Science Intern and Download Resume */
+        .dark-pink {
+            color: #d5006d;
+        }
+
+        /* Skills Styles */
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .skills li {
+            background: #444;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #333;
+            color: #fff;
+        }
+
+        /* Button Styles */
+        .leetcode-link {
+            color: #1e90ff;
+            text-decoration: underline;
+        }
+        .resume-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .resume-button {
+            padding: 10px 20px;
+            background: #1e90ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+        .resume-button:hover {
+            background: #0a74d3;
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ADITYA VIJJAPU</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="fade-in">
+        <div class="container">
+            <h2>Welcome to My Portfolio</h2>
+            <p>Ex-Intern at Wissen Infotech, Bangalore | Final Year CSE Student at Amrita School of Engineering, Bangalore | DATA SCIENCE enthusiast.</p>
+            
+            <h3 class="dark-pink">Download My Resume</h3>
+            <div class="resume-buttons">
+                <a href="resume_one_page.pdf" class="resume-button">1-Page Resume</a>
+                <a href="resume_two_page.pdf" class="resume-button">2-Page Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>Web Development</li>
+                <li>JavaScript</li>
+                <li>HTML & CSS</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Data Analysis</li>
+                <li>Python</li>
+                <li>Machine Learning</li>
+                <li>SQL</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="leetcode-stats">
+        <div class="container">
+            <h2>LeetCode Stats</h2>
+            <p>Check out my LeetCode progress <a class="leetcode-link" href="https://leetcode.com/progress/" target="_blank">here</a>.</p>
+        </div>
+    </section>
+
+    <section class="experience">
+        <div class="container">
+            <h2>Work Experience</h2>
+            <div class="job">
+                <h3 class="dark-pink">Data Science Intern</h3>
+                <p><strong>Company:</strong> Wissen Infotech</p>
+                <p><strong>Duration:</strong> Jun 2024 - Jul 2024</p>
+                <p>Successfully completed an internship focused on credit analysis in data science. My main responsibilities included data analysis and pre-processing on credit-related datasets, along with developing a Probability of Default model using logistic regression.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Aditya Vijjapu</p>
+    </footer>
+</body>
+</html>
