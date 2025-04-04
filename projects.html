@@ -9,19 +9,21 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            color: #000; /* Set text color to black */
+            color: #333; /* Dark gray text for better readability */
+            background-color: #fff; /* White background */
             margin: 0;
             padding: 0;
             line-height: 1.6;
         }
         header {
-            background: #f4f4f4;
+            background: #f7f7f7; /* Light gray background */
             padding: 20px 0;
             border-bottom: 1px solid #ddd;
         }
         header h1 {
             text-align: center;
             margin: 0;
+            color: #000; /* Black for header */
         }
         nav ul {
             display: flex;
@@ -35,8 +37,11 @@
         }
         nav ul li a {
             text-decoration: none;
-            color: #f4f4f4;
+            color: #FFD700; /* Yellow color for links */
             font-weight: bold;
+        }
+        nav ul li a:hover {
+            color: #000; /* Black on hover */
         }
         section {
             padding: 20px;
@@ -48,7 +53,7 @@
             padding: 0 20px;
         }
         h2 {
-            color: #333333;
+            color: #000; /* Black for section headings */
             margin-bottom: 20px;
         }
         .project, .publication {
@@ -56,10 +61,11 @@
             border-radius: 5px;
             padding: 15px;
             margin-bottom: 20px;
-            background-color: #f9f9f9;
+            background-color: #f9f9f9; /* Light background for project and publication */
         }
         .project h3, .publication h4 {
             margin: 0 0 10px;
+            color: #000; /* Black text for project and publication titles */
         }
         .publication-heading {
             margin-top: 40px;
@@ -67,12 +73,18 @@
         footer {
             text-align: center;
             padding: 10px 0;
-            background: #f4f4f4;
+            background: #f7f7f7; /* Same light gray as the header */
             border-top: 1px solid #ddd;
         }
         footer p {
             margin: 0;
-            color: #555;
+            color: #555; /* Slightly lighter gray for footer text */
+        }
+        a {
+            color: #FFD700; /* Yellow color for links */
+        }
+        a:hover {
+            color: #000; /* Black on hover */
         }
     </style>
 </head>
