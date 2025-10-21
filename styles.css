@@ -1,156 +1,283 @@
+/* ========================================
+   GLOBAL STYLES - Modern Dark UI
+======================================== */
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: #121212; /* Dark background */
-    color: #e0e0e0; /* Light text color */
+    background: radial-gradient(circle at 20% 20%, #0f0f0f, #121212);
+    color: #e0e0e0;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
+/* ========================================
+   HEADER & NAVIGATION
+======================================== */
 header {
-    background: #1e1e1e; /* Darker header */
-    color: #ffffff;
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
     padding: 20px 0;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+    color: #ffd700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
 }
 
 nav ul {
     padding: 0;
+    margin-top: 10px;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
-    position: relative; /* Positioning context for pseudo-elements */
+    display: inline-block;
+    margin: 0 18px;
+    position: relative;
 }
 
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
-    transition: color 0.3s, background 0.3s; /* Added background transition */
-    padding: 5px 0; /* Adding padding for better spacing */
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    padding: 6px 0;
+    transition: all 0.3s ease;
 }
 
 nav ul li a::after {
-    content: '';
-    display: block;
-    height: 3px; /* Underline height */
-    background: transparent; /* Initially transparent */
-    transition: background 0.3s; /* Smooth transition for underline */
-    width: 100%;
+    content: "";
     position: absolute;
     left: 0;
-    bottom: -5px; /* Positioning of the underline */
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff4081, #ffd700);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 nav ul li a:hover {
-    color: #ffd700; /* Gold color on hover */
+    color: #ffd700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
 }
 
-nav ul li:nth-child(1) a:hover::after {
-    background: linear-gradient(90deg, #ff4081, #ffd700); /* First link hover effect */
-}
-
-nav ul li:nth-child(2) a:hover::after {
-    background: linear-gradient(90deg, #ffd700, #00bcd4); /* Second link hover effect */
-}
-
-nav ul li:nth-child(3) a:hover::after {
-    background: linear-gradient(90deg, #00bcd4, #4caf50); /* Third link hover effect */
-}
-
-nav ul li:nth-child(4) a:hover::after {
-    background: linear-gradient(90deg, #4caf50, #ff4081); /* Fourth link hover effect */
-}
-
-/* Optional: To create a smooth transition for hover effects */
-nav ul li a:hover {
-    transform: scale(1.05); /* Scale up on hover */
-}
-
+/* ========================================
+   SECTIONS
+======================================== */
 section {
-    padding: 20px;
-    margin: 10px;
-    background: #1e1e1e; /* Darker section background */
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    padding: 60px 8%;
+    margin: 40px auto;
+    background: rgba(30, 30, 30, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    transition: transform 0.5s ease, opacity 0.6s ease;
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(30px);
 }
 
-.fade-in {
+section.fade-in {
     opacity: 1;
     transform: translateY(0);
 }
 
-.project {
+section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #ffd700;
+    border-left: 5px solid #ff4081;
+    padding-left: 12px;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.8px;
+}
+
+section p {
+    font-size: 1rem;
+    color: #d1d1d1;
+    margin-bottom: 15px;
+}
+
+/* ========================================
+   CARD STYLES (Awards, Projects, etc.)
+======================================== */
+.card,
+.project,
+.award,
+.activity,
+.competition {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px 25px;
     margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #444; /* Lighter border for project boxes */
-    border-radius: 8px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: #2a2a2a; /* Darker background for projects */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.project:hover {
-    transform: scale(1.05); /* Slight scale effect on hover */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+.card::before,
+.project::before,
+.award::before,
+.activity::before,
+.competition::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255, 215, 0, 0.05), transparent 70%);
+    transform: rotate(25deg);
+    z-index: 0;
+    transition: opacity 0.4s ease;
+    opacity: 0;
 }
 
+.card:hover::before,
+.project:hover::before,
+.award:hover::before,
+.activity:hover::before,
+.competition:hover::before {
+    opacity: 1;
+}
+
+.card:hover,
+.project:hover,
+.award:hover,
+.activity:hover,
+.competition:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8);
+}
+
+/* Typography inside cards */
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: #ff4081;
+    margin-bottom: 10px;
+}
+
+strong {
+    color: #ffd700;
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
 button {
-    background: #35424a; /* Base button color */
-    color: #ffffff;
+    background: linear-gradient(90deg, #ff4081, #ffd700);
     border: none;
-    padding: 10px 15px;
+    color: #121212;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s, transform 0.2s;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
 button:hover {
-    background: #ff4081; /* Pink color on hover */
-    transform: translateY(-2px); /* Lift effect on hover */
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
 }
 
-.hidden {
-    display: none;
-}
-
+/* ========================================
+   FOOTER
+======================================== */
 footer {
     text-align: center;
-    padding: 20px 0;
-    background: #1e1e1e;
-    color: #ffffff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 30px 0;
+    background: #1a1a1a;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    margin-top: 60px;
+    letter-spacing: 0.3px;
 }
 
-/* Additional styles for fonts */
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif; /* Heading font */
-    color: #ffd700; /* Gold color for headings */
+footer p {
+    opacity: 0.85;
 }
 
-h2 {
-    margin-top: 20px;
+footer p::after {
+    content: " ✨";
 }
 
-h3 {
-    margin-top: 10px;
-    color: #ff4081; /* Different color for subheadings */
+/* ========================================
+   ANIMATIONS & SCROLL EFFECTS
+======================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-a {
-    transition: color 0.3s;
+.fade-in {
+    animation: fadeInUp 0.8s ease forwards;
 }
 
-a:hover {
-    color: #ff4081; /* Pink color for links */
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+@media (max-width: 768px) {
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    button {
+        width: 100%;
+        text-align: center;
+    }
 }
