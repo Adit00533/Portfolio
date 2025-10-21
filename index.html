@@ -1,209 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aditya Vijjapu's personal portfolio. Ex-Intern at Wissen Infotech, Data Science enthusiast, and final-year CSE student at Amrita School of Engineering.">
-    <meta name="author" content="Aditya Vijjapu">
-    <title>Aditya Vijjapu - Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #fff;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Aditya Vijjapu's personal portfolio. Ex-Intern at Wissen Infotech, Data Science enthusiast, and final-year CSE student at Amrita School of Engineering."
+  />
+  <meta name="author" content="Aditya Vijjapu" />
+  <title>Aditya Vijjapu - Portfolio</title>
 
-        /* Header Styles */
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-        }
-        header h1 {
-            text-align: center;
-            margin: 0;
-            color: #d4af37; /* Dark Yellow for Aditya Vijjapu */
-        }
-        nav {
-            text-align: center;
-            margin: 10px 0;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: inline-block;
-            position: relative;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            position: relative;
-            padding-bottom: 5px;
-        }
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600;800&display=swap"
+    rel="stylesheet"
+  />
 
-        /* Navigation Hover Effects */
-        nav ul li a::after {
-            content: '';
-            display: block;
-            height: 3px;
-            background: transparent;
-            transition: background 0.3s;
-            width: 100%;
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-        }
-        nav ul li a:hover {
-            color: #ffd700;
-        }
-        nav ul li:nth-child(1) a:hover::after {
-            background: linear-gradient(90deg, #ff4081, #ffd700);
-        }
-        nav ul li:nth-child(2) a:hover::after {
-            background: linear-gradient(90deg, #ffd700, #00bcd4);
-        }
-        nav ul li:nth-child(3) a:hover::after {
-            background: linear-gradient(90deg, #00bcd4, #4caf50);
-        }
-        nav ul li:nth-child(4) a:hover::after {
-            background: linear-gradient(90deg, #4caf50, #ff4081);
-        }
+  <style>
+    /* ======================
+       Global Styles
+    ====================== */
+    :root {
+      --gold: #d4af37;
+      --dark-bg: #000;
+      --light-bg: #222;
+      --accent-pink: #d5006d;
+      --text-color: #fff;
+      --muted: #bbb;
+      --transition: all 0.3s ease-in-out;
+    }
 
-        /* Section Styles */
-        section {
-            margin: 20px 0;
-            padding: 20px;
-            background: #222;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Heading Styles */
-        h2, h3 {
-            color: #d4af37;
-        }
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      background: var(--dark-bg);
+      color: var(--text-color);
+      scroll-behavior: smooth;
+    }
 
-        /* Dark Pink for Data Science Intern and Download Resume */
-        .dark-pink {
-            color: #d5006d;
-        }
+    .container {
+      width: 85%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
 
-        /* Skills Styles */
-        .skills ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .skills li {
-            background: #444;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
+    /* ======================
+       Header
+    ====================== */
+    header {
+      background: #111;
+      padding: 15px 0;
+      border-bottom: 1px solid #333;
+    }
 
-        /* Footer Styles */
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background: #333;
-            color: #fff;
-        }
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      font-size: 2.4em;
+      background: linear-gradient(90deg, #ffd700, var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
 
-        /* Button Styles */
-        .leetcode-link {
-            color: #1e90ff;
-            text-decoration: underline;
-        }
-    </style>
+    nav {
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: var(--text-color);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 4px;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, #ff4081, #ffd700);
+      transition: var(--transition);
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700;
+    }
+
+    /* ======================
+       Sections
+    ====================== */
+    section {
+      background: var(--light-bg);
+      margin: 25px 0;
+      padding: 30px 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* ======================
+       Skills
+    ====================== */
+    .skills ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .skills li {
+      background: #333;
+      border: 1px solid var(--gold);
+      border-radius: 25px;
+      padding: 8px 16px;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .skills li:hover {
+      background: var(--gold);
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    /* ======================
+       Work Experience
+    ====================== */
+    .job {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #1a1a1a;
+      border-left: 4px solid var(--accent-pink);
+      border-radius: 6px;
+    }
+
+    .dark-pink {
+      color: var(--accent-pink);
+    }
+
+    strong {
+      color: #fff;
+    }
+
+    /* ======================
+       Links
+    ====================== */
+    a {
+      color: #1e90ff;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--gold);
+    }
+
+    /* ======================
+       Footer
+    ====================== */
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      background: #111;
+      border-top: 1px solid #333;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* ======================
+       Responsive
+    ====================== */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      .container {
+        width: 90%;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      section {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <h1>ADITYA VIJJAPU</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
-    <section class="fade-in">
-        <div class="container">
-            <h2>Welcome to My Portfolio</h2>
-            <p>Ex-Intern at Wissen Infotech, Bangalore | Final Year CSE Student at Amrita School of Engineering, Bangalore | Software Development enthusiast.</p>
-        </div>
+  <header>
+    <div class="container">
+      <h1>ADITYA VIJJAPU</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <h2>Welcome to My Portfolio</h2>
+        <p>
+          Ex-Intern at Wissen Infotech, Bangalore | Final Year CSE Student at Amrita School of Engineering,
+          Bangalore | Passionate about Software Development, Artificial Intelligence, and Research.
+        </p>
+      </div>
     </section>
 
     <section class="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul>
-                <li>Web Development</li>
-                <li>HTML & CSS</li>
-                <li>React</li>
-                <li>Node.js</li>
-                <li>Data Analysis</li>
-                <li>Python</li>
-                <li>Machine Learning</li>
-                <li>MongoDB</li>
-                <li>Java</li>
-            </ul>
-        </div>
+      <div class="container">
+        <h2>Skills</h2>
+        <ul>
+          <li>Web Development</li>
+          <li>HTML & CSS</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>Python</li>
+          <li>Data Analysis</li>
+          <li>Machine Learning</li>
+          <li>MongoDB</li>
+          <li>Java</li>
+        </ul>
+      </div>
     </section>
 
-    <section class="leetcode-stats">
-        <div class="container">
-            <h2>LeetCode Stats</h2>
-            <p>Check out my LeetCode progress <a class="leetcode-link" href="https://leetcode.com/progress/" target="_blank">here</a>.</p>
-        </div>
+    <section>
+      <div class="container">
+        <h2>LeetCode Stats</h2>
+        <p>
+          Check out my LeetCode progress
+          <a href="https://leetcode.com/progress/" target="_blank">here</a>.
+        </p>
+      </div>
     </section>
 
-        <section class="leetcode-stats">
-        <div class="container">
-            <h2>Google Scholar Profile:</h2>
-            <p>Check out my Google Scholar Profile <a class="Google-scholar-profile" href="https://scholar.google.com/citations?user=xtByF0sAAAAJ&hl=en&oi=ao" target="_blank">here</a>.</p>
-        </div>
+    <section>
+      <div class="container">
+        <h2>Google Scholar</h2>
+        <p>
+          View my Google Scholar profile
+          <a href="https://scholar.google.com/citations?user=xtByF0sAAAAJ&hl=en&oi=ao" target="_blank">here</a>.
+        </p>
+      </div>
     </section>
 
-<section class="experience">
-    <div class="container">
+    <section class="experience">
+      <div class="container">
         <h2>Work Experience</h2>
-        <div class="job">
-            <h3 class="dark-pink">Data Science Intern</h3>
-            <p><strong>Company:</strong> Wissen Infotech</p>
-            <p><strong>Duration:</strong> Jun 2024 - Jul 2024</p>
-            <p>Successfully completed an internship focused on credit analysis in data science. My main responsibilities included data analysis and pre-processing on credit-related datasets, along with developing a Probability of Default model using logistic regression.</p>
-        </div>
-        <div class="job">
-            <h3 class="dark-pink">Gen AI Intern</h3>
-            <p><strong>Company:</strong> NTT Data</p>
-            <p><strong>Duration:</strong> Dec 2024 - Present</p>
-            <p>Currently interning as a Gen AI Intern, focusing on developing Large Language Models (LLM). My work includes training, fine-tuning, and optimizing AI models for real-world applications, contributing to advancements in Natural Language Processing (NLP) and AI development.</p>
-        </div>
-    </div>
-</section>
 
+        <div class="job">
+          <h3 class="dark-pink">Data Science Intern</h3>
+          <p><strong>Company:</strong> Wissen Infotech</p>
+          <p><strong>Duration:</strong> Jun 2024 - Jul 2024</p>
+          <p>
+            Completed a data science internship focusing on credit risk modeling and probability of default prediction.
+            Worked on data preprocessing, feature selection, and logistic regression modeling.
+          </p>
+        </div>
 
-    <footer>
-        <p>&copy; 2024 Aditya Vijjapu</p>
-    </footer>
+        <div class="job">
+          <h3 class="dark-pink">Gen AI Intern</h3>
+          <p><strong>Company:</strong> NTT Data</p>
+          <p><strong>Duration:</strong> Dec 2024 - Present</p>
+          <p>
+            Working on developing and fine-tuning Large Language Models (LLMs) for real-world enterprise applications.
+            Focused on Natural Language Processing, model optimization, and prompt engineering.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Aditya Vijjapu | Built with ❤️ using HTML & CSS</p>
+  </footer>
 </body>
 </html>
