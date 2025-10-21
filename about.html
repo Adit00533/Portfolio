@@ -6,7 +6,6 @@
   <title>Aditya Vijjapu – About</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* ===== COLOR + THEME VARIABLES ===== */
     :root {
       --gold: #ffd700;
       --bg-dark: #0d0d0d;
@@ -16,106 +15,38 @@
       --accent: #ff4081;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: "Poppins", sans-serif;
       background-color: var(--bg-dark);
       color: var(--text-light);
       line-height: 1.6;
-      overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
-    a {
-      color: var(--gold);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+    a { color: var(--gold); text-decoration: none; transition: 0.3s; }
+    a:hover { color: #fff; }
 
-    a:hover {
-      color: #fff;
-    }
-
-    /* ===== HEADER ===== */
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 25px 80px;
-      background-color: var(--bg-dark);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid #222;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 25px 80px; background-color: var(--bg-dark);
+      position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #222;
     }
 
-    header h1 {
-      color: var(--gold);
-      font-weight: 700;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
-    }
+    header h1 { color: var(--gold); font-weight: 700; font-size: 1.8rem; letter-spacing: 2px; }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
+    nav ul { list-style: none; display: flex; gap: 30px; }
+    nav a { font-weight: 500; color: var(--text-light); position: relative; }
+    nav a::after { content: ""; position: absolute; width: 0; height: 2px; left: 0; bottom: -5px; background: var(--gold); transition: 0.3s; }
+    nav a:hover::after, nav a.active::after { width: 100%; }
+    nav a:hover, nav a.active { color: var(--accent); }
 
-    nav a {
-      font-weight: 500;
-      color: var(--text-light);
-      position: relative;
-    }
+    section { padding: 80px 80px; max-width: 1200px; margin: auto; }
+    h2.section-title { font-size: 2rem; color: var(--gold); margin-bottom: 40px; text-align: center; letter-spacing: 1px; }
 
-    nav a::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 2px;
-      left: 0;
-      bottom: -5px;
-      background: var(--gold);
-      transition: 0.3s;
-    }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 
-    nav a:hover::after,
-    nav a.active::after {
-      width: 100%;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: var(--accent);
-    }
-
-    /* ===== SECTIONS ===== */
-    section {
-      padding: 80px 80px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h2.section-title {
-      font-size: 2rem;
-      color: var(--gold);
-      margin-bottom: 40px;
-      text-align: center;
-      letter-spacing: 1px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-
-    /* ===== CARDS ===== */
     .card {
       background-color: var(--card-bg);
       padding: 25px;
@@ -125,35 +56,39 @@
       cursor: pointer;
       opacity: 0;
       transform: translateY(40px);
+      display: flex; flex-direction: column; justify-content: space-between;
     }
 
-    .card.show {
-      opacity: 1;
-      transform: translateY(0);
+    .card.show { opacity: 1; transform: translateY(0); }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15); }
+
+    .card h3 { color: var(--accent); font-size: 1.3rem; margin-bottom: 10px; }
+    .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 6px; }
+    .card a { display: inline-block; margin-top: 10px; color: var(--gold); font-weight: 600; }
+
+    /* Certification card logo style */
+    .cert-card {
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15);
+    .cert-card img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #111;
+      padding: 5px;
+      transition: transform 0.3s ease;
     }
 
-    .card h3 {
-      color: var(--accent);
-      font-size: 1.3rem;
-      margin-bottom: 10px;
+    .cert-card img:hover {
+      transform: scale(1.1);
     }
 
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 8px;
-    }
-
-    .card a {
-      display: inline-block;
-      margin-top: 10px;
-      color: var(--gold);
-      font-weight: 600;
+    .cert-details {
+      flex: 1;
     }
 
     footer {
@@ -165,22 +100,10 @@
       font-size: 0.9rem;
     }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        padding: 20px;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 15px;
-      }
-
-      section {
-        padding: 60px 20px;
-      }
+      header { flex-direction: column; padding: 20px; }
+      nav ul { flex-direction: column; gap: 15px; margin-top: 15px; }
+      section { padding: 60px 20px; }
     }
   </style>
 </head>
@@ -197,7 +120,6 @@
     </nav>
   </header>
 
-  <!-- ABOUT ME -->
   <section id="about-me">
     <h2 class="section-title">About Me</h2>
     <p>
@@ -210,150 +132,76 @@
     </p>
   </section>
 
-  <!-- AWARDS -->
-  <section id="awards">
-    <h2 class="section-title">Awards</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>🏆 Triple Crown Award</h3>
-        <p><strong>Date:</strong> Mar 2024</p>
-        <p><strong>Organization:</strong> Toastmasters</p>
-        <p>Completed three levels of the “Dynamic Leadership” Pathway program in one term.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPETITIONS -->
-  <section id="competitions">
-    <h2 class="section-title">Competitions</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>💡 Lex Res-Amrita Hackathon</h3>
-        <p><strong>Date:</strong> Apr 2024</p>
-        <p><strong>Position:</strong> Third Prize</p>
-        <p><strong>Organization:</strong> Amrita Vishwa Vidyapeetham</p>
-        <p>Built a machine learning model to classify court reading cases as judged or not judged, securing top-3 placement.</p>
-      </div>
-      <div class="card">
-        <h3>🌍 Carbon Zero Challenge 3.0</h3>
-        <p><strong>Date:</strong> July 2023</p>
-        <p><strong>Organization:</strong> IIT Madras</p>
-        <p>Selected among the top 25 teams for the “Pitch for the Planet” contest during the Carbon Zero Challenge Grand Expo.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ACTIVITIES -->
-  <section id="activities">
-    <h2 class="section-title">Extra-Curricular Activities</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>🎭 Executive, Kala Club</h3>
-        <p><strong>Duration:</strong> Aug 2023 - Jan 2024</p>
-        <p>Organized cultural events such as Kalanjali, promoting art and creativity on campus.</p>
-      </div>
-      <div class="card">
-        <h3>🗣️ Member, Toastmasters Amrita Bangalore</h3>
-        <p><strong>Duration:</strong> Sep 2023 - Mar 2024</p>
-        <p>Enhanced leadership and public speaking skills, achieving the Triple Crown Award for excellence.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- LICENSES & CERTIFICATIONS -->
   <section id="certifications">
     <h2 class="section-title">Licenses & Certifications</h2>
     <div class="grid">
-      <div class="card">
-        <h3>Google AI Essentials</h3>
-        <p><strong>Issuer:</strong> Google</p>
-        <p><strong>Issued:</strong> Oct 2025</p>
-        <p><strong>Credential ID:</strong> LJTTAI7A444W</p>
-        <a href="#" target="_blank">Show credential</a>
+      <div class="card show">
+        <div class="cert-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo">
+          <div class="cert-details">
+            <h3>Google AI Essentials</h3>
+            <p><strong>Issuer:</strong> Google</p>
+            <p><strong>Issued:</strong> Oct 2025</p>
+            <p><strong>Credential ID:</strong> LJTTAI7A444W</p>
+      
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Containers & Kubernetes Essentials</h3>
-        <p><strong>Issuer:</strong> IBM</p>
-        <p><strong>Issued:</strong> May 2024</p>
-        <a href="#" target="_blank">Show credential</a>
+
+      <div class="card show">
+        <div class="cert-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Logo">
+          <div class="cert-details">
+            <h3>Containers & Kubernetes Essentials</h3>
+            <p><strong>Issuer:</strong> IBM</p>
+            <p><strong>Issued:</strong> May 2024</p>
+      
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Introduction to Containers, Kubernetes, and OpenShift V2</h3>
-        <p><strong>Issuer:</strong> Cognitive Class</p>
-        <p><strong>Issued:</strong> May 2024</p>
-        <p><strong>Credential ID:</strong> 8e4968870e1b46c8b07e1e2e7263d2a1</p>
-        <a href="#" target="_blank">Show credential</a>
+
+      <div class="card show">
+        <div class="cert-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Coursera-Logo_2.svg" alt="Coursera Logo">
+          <div class="cert-details">
+            <h3>Business Analysis & Process Management</h3>
+            <p><strong>Issuer:</strong> Coursera Project Network</p>
+            <p><strong>Issued:</strong> Apr 2024</p>
+       
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Business Analysis & Process Management</h3>
-        <p><strong>Issuer:</strong> Coursera Project Network</p>
-        <p><strong>Issued:</strong> Apr 2024</p>
-        <p><strong>Credential ID:</strong> B5EXLQPRPX5J</p>
-        <a href="#" target="_blank">Show credential</a>
-      </div>
-      <div class="card">
-        <h3>AWS Academy Graduate - AWS Academy Introduction to Cloud Semester 1</h3>
-        <p><strong>Issuer:</strong> Amazon Web Services (AWS)</p>
-        <p><strong>Issued:</strong> Mar 2024</p>
-        <a href="#" target="_blank">Show credential</a>
-      </div>
-      <div class="card">
-        <h3>Computer Hardware Basics</h3>
-        <p><strong>Issuer:</strong> Cisco</p>
-        <p><strong>Issued:</strong> Mar 2024</p>
-        <a href="#" target="_blank">Show credential</a>
-      </div>
-      <div class="card">
-        <h3>Data Analytics Essentials</h3>
-        <p><strong>Issuer:</strong> Cisco</p>
-        <p><strong>Issued:</strong> Mar 2024</p>
-        <a href="#" target="_blank">Show credential</a>
-      </div>
-      <div class="card">
-        <h3>Generative AI: The Evolution of Thoughtful Online Search</h3>
-        <p><strong>Issuer:</strong> LinkedIn</p>
-        <p><strong>Issued:</strong> Feb 2024</p>
-        <a href="#" target="_blank">Show credential</a>
-      </div>
-      <div class="card">
-        <h3>Learning Microsoft 365 Copilot</h3>
-        <p><strong>Issuer:</strong> LinkedIn</p>
-        <p><strong>Issued:</strong> Feb 2024</p>
-        <a href="#" target="_blank">Show credential</a>
-      </div>
-      <div class="card">
-        <h3>Streamlining Your Work with Copilot</h3>
-        <p><strong>Issuer:</strong> LinkedIn</p>
-        <p><strong>Issued:</strong> Feb 2024</p>
-        <a href="#" target="_blank">Show credential</a>
-      </div>
-      <div class="card">
-        <h3>What Is Generative AI?</h3>
-        <p><strong>Issuer:</strong> LinkedIn</p>
-        <p><strong>Issued:</strong> Feb 2024</p>
-        <a href="#" target="_blank">Show credential</a>
+
+      <div class="card show">
+        <div class="cert-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Amazon_Web_Services_Logo.svg" alt="AWS Logo">
+          <div class="cert-details">
+            <h3>AWS Academy Graduate - AWS Cloud Semester 1</h3>
+            <p><strong>Issuer:</strong> Amazon Web Services</p>
+            <p><strong>Issued:</strong> Mar 2024</p>
+            <a href="#" target="_blank">Show credential</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Aditya Vijjapu • Designed with ❤️ for creativity & innovation</p>
+    <p>© 2025 Aditya Vijjapu</p>
   </footer>
 
   <script>
-    // ===== Scroll Animation (Fade/Slide Effects) =====
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add("show");
           }
         });
-      },
-      { threshold: 0.2 }
+      }, { threshold: 0.2 }
     );
-
-    document.querySelectorAll(".card").forEach((el) => observer.observe(el));
+    document.querySelectorAll(".card").forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
