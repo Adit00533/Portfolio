@@ -3,332 +3,173 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Aditya Vijjapu's portfolio: Software Developer, AI Enthusiast, Final Year CSE Student at Amrita School of Engineering."
-  />
-  <meta name="author" content="Aditya Vijjapu" />
-  <title>Aditya Vijjapu - Portfolio</title>
-
-  <!-- Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600;800&display=swap"
-    rel="stylesheet"
-  />
-
+  <title>Aditya Vijjapu – About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* ======================
-       Global Styles
-    ====================== */
     :root {
-      --primary: #0d6efd;
-      --secondary: #6c757d;
+      --gold: #ffd700;
       --accent: #ff4081;
-      --bg-dark: #0f0f0f;
-      --bg-light: #1a1a1a;
+      --bg-dark: #0d0d0d;
+      --bg-card: #1b1b1b;
       --text-light: #f5f5f5;
-      --text-muted: #ccc;
-      --transition: all 0.3s ease-in-out;
+      --text-muted: #aaa;
+      --transition: all 0.3s ease;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Roboto', sans-serif;
-      background: var(--bg-dark);
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-dark);
       color: var(--text-light);
       scroll-behavior: smooth;
     }
 
-    .container {
-      width: 85%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px 0;
-    }
+    a { color: var(--gold); text-decoration: none; transition: var(--transition); }
+    a:hover { color: #fff; }
 
-    /* ======================
-       Header
-    ====================== */
     header {
-      background: #111;
-      padding: 20px 0;
-      border-bottom: 1px solid #333;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 25px 80px; background-color: var(--bg-dark);
+      position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #222;
     }
 
-    header h1 {
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      font-size: 2.5em;
-      color: var(--primary);
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-
-    nav {
-      text-align: center;
-    }
-
-    nav ul {
-      list-style: none;
-      display: inline-flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      padding: 0;
-    }
-
-    nav ul li a {
-      color: var(--text-light);
-      text-decoration: none;
-      position: relative;
-      padding-bottom: 5px;
-      font-weight: 600;
+    header h1 { color: var(--gold); font-weight: 700; font-size: 1.8rem; letter-spacing: 2px; }
+    nav ul { list-style: none; display: flex; gap: 30px; }
+    nav a { font-weight: 500; color: var(--text-light); position: relative; }
+    nav a::after {
+      content: ""; position: absolute; width: 0; height: 2px; left: 0; bottom: -5px; background: var(--gold);
       transition: var(--transition);
     }
+    nav a:hover::after { width: 100%; }
 
-    nav ul li a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      left: 0;
-      bottom: 0;
-      background: var(--accent);
-      transition: var(--transition);
-    }
+    section { padding: 80px 80px; max-width: 1200px; margin: auto; }
+    h2.section-title { font-size: 2rem; color: var(--gold); margin-bottom: 40px; text-align: center; }
 
-    nav ul li a:hover::after {
-      width: 100%;
-    }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
-    nav ul li a:hover {
-      color: var(--accent);
-    }
-
-    /* ======================
-       Sections
-    ====================== */
-    section {
-      background: var(--bg-light);
-      margin: 30px 0;
-      padding: 35px 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+    .card {
+      background-color: var(--bg-card);
+      padding: 25px;
+      border-radius: 16px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease;
+      border: 1px solid #222;
+      cursor: default;
       opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s forwards;
+      transform: translateY(40px);
     }
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    .card.show { opacity: 1; transform: translateY(0); }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15); }
 
-    h2 {
-      color: var(--primary);
-      margin-bottom: 15px;
-      font-family: 'Poppins', sans-serif;
-    }
+    .card h3 { color: var(--gold); font-size: 1.3rem; margin-bottom: 10px; }
+    .card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
 
-    p {
-      color: var(--text-muted);
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    /* ======================
-       Skills
-    ====================== */
+    /* Skills */
     .skills ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      list-style: none;
-      margin-top: 15px;
+      list-style: none; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 15px;
     }
-
     .skills li {
-      background: #222;
-      border: 1px solid var(--primary);
-      border-radius: 25px;
-      padding: 10px 18px;
-      font-size: 0.95rem;
-      transition: var(--transition);
+      background: #222; border: 1px solid var(--gold); border-radius: 25px;
+      padding: 10px 18px; font-size: 0.95rem; transition: var(--transition);
     }
+    .skills li:hover { background: var(--gold); color: #000; transform: scale(1.08); }
 
-    .skills li:hover {
-      background: var(--primary);
-      color: #000;
-      transform: scale(1.08);
-    }
+    /* Work Experience */
+    .job { padding: 18px; background: #1c1c1c; border-left: 5px solid var(--accent); border-radius: 8px; }
+    .job h3 { color: var(--accent); margin-bottom: 8px; }
 
-    /* ======================
-       Work Experience
-    ====================== */
-    .job {
-      margin-bottom: 22px;
-      padding: 18px;
-      background: #1c1c1c;
-      border-left: 5px solid var(--accent);
-      border-radius: 8px;
-    }
-
-    .dark-pink {
-      color: var(--accent);
-    }
-
-    strong {
-      color: #fff;
-    }
-
-    /* ======================
-       Links
-    ====================== */
-    a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    a:hover {
-      color: var(--accent);
-    }
-
-    /* ======================
-       Footer
-    ====================== */
     footer {
-      text-align: center;
-      padding: 20px 0;
-      background: #111;
-      border-top: 1px solid #333;
-      color: var(--text-muted);
-      font-size: 0.9rem;
+      text-align: center; padding: 40px 0; border-top: 1px solid #222;
+      background-color: #000; color: var(--text-muted); font-size: 0.9rem;
     }
 
-    /* ======================
-       Responsive
-    ====================== */
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2em;
-      }
-      .container {
-        width: 90%;
-      }
-      nav ul {
-        flex-direction: column;
-        gap: 12px;
-      }
-      section {
-        padding: 25px;
-      }
+      header { flex-direction: column; padding: 20px; }
+      nav ul { flex-direction: column; gap: 15px; margin-top: 15px; }
+      section { padding: 60px 20px; }
     }
   </style>
 </head>
-
 <body>
   <header>
-    <div class="container">
-      <h1>ADITYA VIJJAPU</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <h1>ADITYA VIJJAPU</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <div class="container">
-        <h2>Welcome to My Portfolio</h2>
-        <p>
-          Ex-Intern at Wissen Infotech, Bangalore | Final Year CSE Student at Amrita School of Engineering, Bangalore.
-          Passionate about Software Development, Artificial Intelligence, and creating impactful solutions.
-        </p>
+  <section id="about-me">
+    <h2 class="section-title">About Me</h2>
+    <div class="grid">
+      <div class="card show">
+        <h3>Introduction</h3>
+        <p>Ex-Intern at Wissen Infotech, Bangalore | Final Year CSE Student at Amrita School of Engineering, Bangalore. Passionate about Software Development, AI, and building impactful solutions.</p>
       </div>
-    </section>
-
-    <section class="skills">
-      <div class="container">
-        <h2>Skills & Technologies</h2>
-        <ul>
-          <li>Web Development</li>
-          <li>HTML & CSS</li>
-          <li>React</li>
-          <li>Angular</li>
-          <li>Node.js</li>
-          <li>Python</li>
-          <li>Data Analysis</li>
-          <li>Machine Learning</li>
-          <li>MongoDB</li>
-          <li>Java</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2>LeetCode Stats</h2>
-        <p>
-          Track my problem-solving progress on LeetCode
-          <a href="https://leetcode.com/progress/" target="_blank">here</a>.
-        </p>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2>Google Scholar</h2>
-        <p>
-          Explore my publications and research
-          <a href="https://scholar.google.com/citations?user=xtByF0sAAAAJ&hl=en&oi=ao" target="_blank">here</a>.
-        </p>
-      </div>
-    </section>
-
-    <section class="experience">
-      <div class="container">
-        <h2>Work Experience</h2>
-
-        <div class="job">
-          <h3 class="dark-pink">Data Science Intern</h3>
-          <p><strong>Company:</strong> Wissen Infotech</p>
-          <p><strong>Duration:</strong> Jun 2024 - Jul 2024</p>
-          <p>
-            Completed a data science internship focused on credit risk modeling and probability of default prediction.
-            Worked on data preprocessing, feature selection, and logistic regression modeling.
-          </p>
-        </div>
-
-        <div class="job">
-          <h3 class="dark-pink">Gen AI Intern</h3>
-          <p><strong>Company:</strong> NTT Data</p>
-          <p><strong>Duration:</strong> Dec 2024 - Present</p>
-          <p>
-            Developing and fine-tuning Large Language Models (LLMs) for enterprise applications.
-            Focused on Natural Language Processing, model optimization, and prompt engineering.
-          </p>
+      <div class="card show">
+        <h3>Skills & Technologies</h3>
+        <div class="skills">
+          <ul>
+            <li>Web Development</li>
+            <li>HTML & CSS</li>
+            <li>React</li>
+            <li>Angular</li>
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>Data Analysis</li>
+            <li>Machine Learning</li>
+            <li>MongoDB</li>
+            <li>Java</li>
+          </ul>
         </div>
       </div>
-    </section>
-  </main>
+      <div class="card show">
+        <h3>LeetCode Stats</h3>
+        <p>Track my problem-solving progress on LeetCode <a href="https://leetcode.com/progress/" target="_blank">here</a>.</p>
+      </div>
+      <div class="card show">
+        <h3>Google Scholar</h3>
+        <p>Explore my publications and research <a href="https://scholar.google.com/citations?user=xtByF0sAAAAJ&hl=en&oi=ao" target="_blank">here</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="section-title">Work Experience</h2>
+    <div class="grid">
+      <div class="card show job">
+        <h3>Gen AI Intern</h3>
+        <p><strong>Company:</strong> NTT Data</p>
+        <p><strong>Duration:</strong> Dec 2024 - Present</p>
+        <p>Developing and fine-tuning LLMs for enterprise applications. Focused on NLP, model optimization, and prompt engineering.</p>
+      </div>
+      <div class="card show job">
+        <h3>Data Science Intern</h3>
+        <p><strong>Company:</strong> Wissen Infotech</p>
+        <p><strong>Duration:</strong> Jun 2024 - Jul 2024</p>
+        <p>Completed a data science internship focused on credit risk modeling, feature selection, and logistic regression.</p>
+      </div>
+ 
+    </div>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Aditya Vijjapu</p>
+    <p>© 2025 Aditya Vijjapu </p>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      }),
+      { threshold: 0.2 }
+    );
+    document.querySelectorAll('.card').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
