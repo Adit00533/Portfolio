@@ -1,281 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aditya Vijjapu - About</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditya Vijjapu – About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* ======================
-       Global Styles
-    ====================== */
+    /* ===== COLOR + THEME VARIABLES ===== */
     :root {
-      --primary: #0d6efd;
-      --secondary: #6c757d;
-      --accent: #ff4081;
-      --bg-dark: #0f0f0f;
-      --bg-light: #1a1a1a;
+      --gold: #ffd700;
+      --bg-dark: #0d0d0d;
+      --card-bg: #1b1b1b;
       --text-light: #f5f5f5;
-      --text-muted: #ccc;
-      --transition: all 0.3s ease-in-out;
+      --text-muted: #aaa;
+      --accent: #ff4081;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg-dark);
+      font-family: "Poppins", sans-serif;
+      background-color: var(--bg-dark);
       color: var(--text-light);
       line-height: 1.6;
+      overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
-    .container {
-      width: 85%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px 0;
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
 
+    a:hover {
+      color: #fff;
+    }
+
+    /* ===== HEADER ===== */
     header {
-      background: #111;
-      padding: 20px 0;
-      border-bottom: 1px solid #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 80px;
+      background-color: var(--bg-dark);
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 100;
+      border-bottom: 1px solid #222;
     }
 
-    .logo {
-      font-family: 'Poppins', sans-serif;
-      font-size: 2.5em;
-      color: var(--primary);
-      text-align: center;
-      margin-bottom: 10px;
+    header h1 {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
+      gap: 30px;
     }
 
-    nav ul li a {
+    nav a {
+      font-weight: 500;
       color: var(--text-light);
-      text-decoration: none;
-      font-weight: 600;
-      padding-bottom: 5px;
       position: relative;
-      transition: var(--transition);
     }
 
-    nav ul li a::after {
-      content: '';
+    nav a::after {
+      content: "";
       position: absolute;
       width: 0;
       height: 2px;
       left: 0;
-      bottom: 0;
-      background: var(--accent);
-      transition: var(--transition);
+      bottom: -5px;
+      background: var(--gold);
+      transition: 0.3s;
     }
 
-    nav ul li a:hover::after,
-    nav ul li a.active::after {
+    nav a:hover::after,
+    nav a.active::after {
       width: 100%;
     }
 
-    nav ul li a:hover,
-    nav ul li a.active {
+    nav a:hover,
+    nav a.active {
       color: var(--accent);
     }
 
+    /* ===== SECTIONS ===== */
     section {
-      background: var(--bg-light);
-      margin: 30px 0;
-      padding: 35px 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s forwards;
+      padding: 80px 80px;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    h2.section-title {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 40px;
+      text-align: center;
+      letter-spacing: 1px;
     }
 
-    h2 {
-      color: var(--primary);
-      margin-bottom: 20px;
-      font-family: 'Poppins', sans-serif;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
 
-    p {
-      color: var(--text-muted);
-      font-size: 1rem;
-      margin-bottom: 15px;
-    }
-
-    /* Cards */
-    .cards .card-grid {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
+    /* ===== CARDS ===== */
     .card {
-      background: #222;
-      padding: 20px;
-      border-radius: 10px;
-      flex: 1 1 300px;
-      transition: var(--transition);
-      border-left: 5px solid var(--accent);
+      background-color: var(--card-bg);
+      padding: 25px;
+      border-radius: 16px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease;
+      border: 1px solid #222;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(255, 64, 129, 0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15);
     }
 
     .card h3 {
       color: var(--accent);
+      font-size: 1.3rem;
       margin-bottom: 10px;
     }
 
     .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
       margin-bottom: 8px;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--gold);
+      font-weight: 600;
     }
 
     footer {
       text-align: center;
-      padding: 20px 0;
-      background: #111;
-      border-top: 1px solid #333;
+      padding: 40px 0;
+      border-top: 1px solid #222;
+      background-color: #000;
       color: var(--text-muted);
       font-size: 0.9rem;
     }
 
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      .container {
-        width: 90%;
+      header {
+        flex-direction: column;
+        padding: 20px;
       }
+
       nav ul {
         flex-direction: column;
-        gap: 12px;
+        gap: 15px;
+        margin-top: 15px;
       }
-      .cards .card-grid {
-        flex-direction: column;
+
+      section {
+        padding: 60px 20px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1 class="logo">Aditya Vijjapu</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <h1>ADITYA VIJJAPU</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        I am a final-year <strong>Computer Science and Engineering</strong> student at 
-        <strong>Amrita Vishwa Vidyapeetham, Bangalore</strong>, passionate about building efficient and innovative software systems.
-      </p>
-      <p>
-        My expertise spans <strong>software development, Angular, Node.js, machine learning, and data analysis</strong>, 
-        enabling me to deliver scalable, high-quality solutions. I am seeking opportunities in <strong>software development, backend engineering, or cloud computing</strong>.
-      </p>
-    </div>
+  <!-- ABOUT ME -->
+  <section id="about-me">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      I am a final-year <strong>Computer Science and Engineering</strong> student at 
+      <strong>Amrita Vishwa Vidyapeetham, Bangalore</strong>, passionate about building efficient and innovative software systems.
+    </p>
+    <p>
+      My expertise spans <strong>software development, Angular, Node.js, machine learning, and data analysis</strong>, 
+      enabling me to deliver scalable, high-quality solutions. I am seeking opportunities in <strong>software development, backend engineering, or cloud computing</strong>.
+    </p>
   </section>
 
-  <section class="cards">
-    <div class="container">
-      <h2>Awards</h2>
+  <!-- AWARDS -->
+  <section id="awards">
+    <h2 class="section-title">Awards</h2>
+    <div class="grid">
       <div class="card">
         <h3>🏆 Triple Crown Award</h3>
         <p><strong>Date:</strong> Mar 2024</p>
         <p><strong>Organization:</strong> Toastmasters</p>
-        <p>
-          Recognized for completing three levels of the “Dynamic Leadership” Pathway program in one term.
-        </p>
+        <p>Completed three levels of the “Dynamic Leadership” Pathway program in one term.</p>
       </div>
     </div>
   </section>
 
-  <section class="cards">
-    <div class="container">
-      <h2>Competitions</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>💡 Lex Res-Amrita Hackathon</h3>
-          <p><strong>Date:</strong> Apr 2024</p>
-          <p><strong>Position:</strong> Third Prize</p>
-          <p><strong>Organization:</strong> Amrita Vishwa Vidyapeetham</p>
-          <p>
-            Built a machine learning model to classify court reading cases as judged or not judged, securing top-3 placement.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>🌍 Carbon Zero Challenge 3.0</h3>
-          <p><strong>Date:</strong> July 2023</p>
-          <p><strong>Organization:</strong> IIT Madras</p>
-          <p>
-            Selected among the top 25 teams for the “Pitch for the Planet” contest during the Carbon Zero Challenge Grand Expo.
-          </p>
-        </div>
+  <!-- COMPETITIONS -->
+  <section id="competitions">
+    <h2 class="section-title">Competitions</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>💡 Lex Res-Amrita Hackathon</h3>
+        <p><strong>Date:</strong> Apr 2024</p>
+        <p><strong>Position:</strong> Third Prize</p>
+        <p><strong>Organization:</strong> Amrita Vishwa Vidyapeetham</p>
+        <p>Built a machine learning model to classify court reading cases as judged or not judged, securing top-3 placement.</p>
+      </div>
+      <div class="card">
+        <h3>🌍 Carbon Zero Challenge 3.0</h3>
+        <p><strong>Date:</strong> July 2023</p>
+        <p><strong>Organization:</strong> IIT Madras</p>
+        <p>Selected among the top 25 teams for the “Pitch for the Planet” contest during the Carbon Zero Challenge Grand Expo.</p>
       </div>
     </div>
   </section>
 
-  <section class="cards">
-    <div class="container">
-      <h2>Extra-Curricular Activities</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>🎭 Executive, Kala Club</h3>
-          <p><strong>Duration:</strong> Aug 2023 - Jan 2024</p>
-          <p>
-            Organized cultural events such as Kalanjali, promoting art and creativity on campus.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>🗣️ Member, Toastmasters Amrita Bangalore</h3>
-          <p><strong>Duration:</strong> Sep 2023 - Mar 2024</p>
-          <p>
-            Enhanced leadership and public speaking skills, achieving the Triple Crown Award for excellence.
-          </p>
-        </div>
+  <!-- ACTIVITIES -->
+  <section id="activities">
+    <h2 class="section-title">Extra-Curricular Activities</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🎭 Executive, Kala Club</h3>
+        <p><strong>Duration:</strong> Aug 2023 - Jan 2024</p>
+        <p>Organized cultural events such as Kalanjali, promoting art and creativity on campus.</p>
+      </div>
+      <div class="card">
+        <h3>🗣️ Member, Toastmasters Amrita Bangalore</h3>
+        <p><strong>Duration:</strong> Sep 2023 - Mar 2024</p>
+        <p>Enhanced leadership and public speaking skills, achieving the Triple Crown Award for excellence.</p>
       </div>
     </div>
   </section>
 
-
-  <section class="cards">
-  <div class="container">
-    <h2>Licenses & Certifications</h2>
-    <div class="card-grid">
+  <!-- LICENSES & CERTIFICATIONS -->
+  <section id="certifications">
+    <h2 class="section-title">Licenses & Certifications</h2>
+    <div class="grid">
       <div class="card">
         <h3>Google AI Essentials</h3>
         <p><strong>Issuer:</strong> Google</p>
@@ -283,14 +271,12 @@
         <p><strong>Credential ID:</strong> LJTTAI7A444W</p>
         <a href="#" target="_blank">Show credential</a>
       </div>
-
       <div class="card">
         <h3>Containers & Kubernetes Essentials</h3>
         <p><strong>Issuer:</strong> IBM</p>
         <p><strong>Issued:</strong> May 2024</p>
         <a href="#" target="_blank">Show credential</a>
       </div>
-
       <div class="card">
         <h3>Introduction to Containers, Kubernetes, and OpenShift V2</h3>
         <p><strong>Issuer:</strong> Cognitive Class</p>
@@ -298,7 +284,6 @@
         <p><strong>Credential ID:</strong> 8e4968870e1b46c8b07e1e2e7263d2a1</p>
         <a href="#" target="_blank">Show credential</a>
       </div>
-
       <div class="card">
         <h3>Business Analysis & Process Management</h3>
         <p><strong>Issuer:</strong> Coursera Project Network</p>
@@ -306,49 +291,42 @@
         <p><strong>Credential ID:</strong> B5EXLQPRPX5J</p>
         <a href="#" target="_blank">Show credential</a>
       </div>
-
       <div class="card">
         <h3>AWS Academy Graduate - AWS Academy Introduction to Cloud Semester 1</h3>
         <p><strong>Issuer:</strong> Amazon Web Services (AWS)</p>
         <p><strong>Issued:</strong> Mar 2024</p>
         <a href="#" target="_blank">Show credential</a>
       </div>
-
       <div class="card">
         <h3>Computer Hardware Basics</h3>
         <p><strong>Issuer:</strong> Cisco</p>
         <p><strong>Issued:</strong> Mar 2024</p>
         <a href="#" target="_blank">Show credential</a>
       </div>
-
       <div class="card">
         <h3>Data Analytics Essentials</h3>
         <p><strong>Issuer:</strong> Cisco</p>
         <p><strong>Issued:</strong> Mar 2024</p>
         <a href="#" target="_blank">Show credential</a>
       </div>
-
       <div class="card">
         <h3>Generative AI: The Evolution of Thoughtful Online Search</h3>
         <p><strong>Issuer:</strong> LinkedIn</p>
         <p><strong>Issued:</strong> Feb 2024</p>
         <a href="#" target="_blank">Show credential</a>
       </div>
-
       <div class="card">
         <h3>Learning Microsoft 365 Copilot</h3>
         <p><strong>Issuer:</strong> LinkedIn</p>
         <p><strong>Issued:</strong> Feb 2024</p>
         <a href="#" target="_blank">Show credential</a>
       </div>
-
       <div class="card">
-        <h3>Streamlining Your Work with Copilot (formerly Bing Chat/Bing Chat Enterprise)</h3>
+        <h3>Streamlining Your Work with Copilot</h3>
         <p><strong>Issuer:</strong> LinkedIn</p>
         <p><strong>Issued:</strong> Feb 2024</p>
         <a href="#" target="_blank">Show credential</a>
       </div>
-
       <div class="card">
         <h3>What Is Generative AI?</h3>
         <p><strong>Issuer:</strong> LinkedIn</p>
@@ -356,30 +334,26 @@
         <a href="#" target="_blank">Show credential</a>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <footer>
-    <p>© 2025 Aditya Vijjapu — Designed with ❤️</p>
+    <p>© 2025 Aditya Vijjapu • Designed with ❤️ for creativity & innovation</p>
   </footer>
 
   <script>
-    // Fade-in animation on scroll
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    // ===== Scroll Animation (Fade/Slide Effects) =====
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
 
-    const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = 'translateY(0)';
-        appearOnScroll.unobserve(entry.target);
-      });
-    }, appearOptions);
-
-    faders.forEach(fader => appearOnScroll.observe(fader));
+    document.querySelectorAll(".card").forEach((el) => observer.observe(el));
   </script>
 </body>
 </html>
-
