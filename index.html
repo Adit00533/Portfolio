@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Aditya Vijjapu's personal portfolio. Ex-Intern at Wissen Infotech, Data Science enthusiast, and final-year CSE student at Amrita School of Engineering."
+    content="Aditya Vijjapu's portfolio: Software Developer, AI Enthusiast, Final Year CSE Student at Amrita School of Engineering."
   />
   <meta name="author" content="Aditya Vijjapu" />
   <title>Aditya Vijjapu - Portfolio</title>
 
   <!-- Fonts -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600;800&display=swap"
     rel="stylesheet"
   />
 
@@ -21,12 +21,13 @@
        Global Styles
     ====================== */
     :root {
-      --gold: #d4af37;
-      --dark-bg: #000;
-      --light-bg: #222;
-      --accent-pink: #d5006d;
-      --text-color: #fff;
-      --muted: #bbb;
+      --primary: #0d6efd;
+      --secondary: #6c757d;
+      --accent: #ff4081;
+      --bg-dark: #0f0f0f;
+      --bg-light: #1a1a1a;
+      --text-light: #f5f5f5;
+      --text-muted: #ccc;
       --transition: all 0.3s ease-in-out;
     }
 
@@ -38,15 +39,14 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      background: var(--dark-bg);
-      color: var(--text-color);
+      background: var(--bg-dark);
+      color: var(--text-light);
       scroll-behavior: smooth;
     }
 
     .container {
       width: 85%;
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 20px 0;
     }
@@ -56,19 +56,20 @@
     ====================== */
     header {
       background: #111;
-      padding: 15px 0;
+      padding: 20px 0;
       border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header h1 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Poppins', sans-serif;
       text-align: center;
-      font-size: 2.4em;
-      background: linear-gradient(90deg, #ffd700, var(--gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
+      font-size: 2.5em;
+      color: var(--primary);
       letter-spacing: 1px;
+      margin-bottom: 10px;
     }
 
     nav {
@@ -79,17 +80,17 @@
       list-style: none;
       display: inline-flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 25px;
       padding: 0;
     }
 
     nav ul li a {
-      color: var(--text-color);
+      color: var(--text-light);
       text-decoration: none;
       position: relative;
-      padding-bottom: 4px;
+      padding-bottom: 5px;
+      font-weight: 600;
       transition: var(--transition);
-      font-weight: 500;
     }
 
     nav ul li a::after {
@@ -99,7 +100,7 @@
       height: 2px;
       left: 0;
       bottom: 0;
-      background: linear-gradient(90deg, #ff4081, #ffd700);
+      background: var(--accent);
       transition: var(--transition);
     }
 
@@ -108,18 +109,18 @@
     }
 
     nav ul li a:hover {
-      color: #ffd700;
+      color: var(--accent);
     }
 
     /* ======================
        Sections
     ====================== */
     section {
-      background: var(--light-bg);
-      margin: 25px 0;
-      padding: 30px 25px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      background: var(--bg-light);
+      margin: 30px 0;
+      padding: 35px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 0.8s forwards;
@@ -133,14 +134,15 @@
     }
 
     h2 {
-      color: var(--gold);
-      margin-bottom: 10px;
-      font-family: 'Montserrat', sans-serif;
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-family: 'Poppins', sans-serif;
     }
 
     p {
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 1rem;
+      line-height: 1.6;
     }
 
     /* ======================
@@ -149,39 +151,39 @@
     .skills ul {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
       list-style: none;
-      margin-top: 10px;
+      margin-top: 15px;
     }
 
     .skills li {
-      background: #333;
-      border: 1px solid var(--gold);
+      background: #222;
+      border: 1px solid var(--primary);
       border-radius: 25px;
-      padding: 8px 16px;
+      padding: 10px 18px;
       font-size: 0.95rem;
       transition: var(--transition);
     }
 
     .skills li:hover {
-      background: var(--gold);
+      background: var(--primary);
       color: #000;
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
     /* ======================
        Work Experience
     ====================== */
     .job {
-      margin-bottom: 20px;
-      padding: 15px;
-      background: #1a1a1a;
-      border-left: 4px solid var(--accent-pink);
-      border-radius: 6px;
+      margin-bottom: 22px;
+      padding: 18px;
+      background: #1c1c1c;
+      border-left: 5px solid var(--accent);
+      border-radius: 8px;
     }
 
     .dark-pink {
-      color: var(--accent-pink);
+      color: var(--accent);
     }
 
     strong {
@@ -192,13 +194,13 @@
        Links
     ====================== */
     a {
-      color: #1e90ff;
+      color: var(--primary);
       text-decoration: none;
       transition: var(--transition);
     }
 
     a:hover {
-      color: var(--gold);
+      color: var(--accent);
     }
 
     /* ======================
@@ -206,10 +208,10 @@
     ====================== */
     footer {
       text-align: center;
-      padding: 15px 0;
+      padding: 20px 0;
       background: #111;
       border-top: 1px solid #333;
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 0.9rem;
     }
 
@@ -225,10 +227,10 @@
       }
       nav ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
       }
       section {
-        padding: 20px;
+        padding: 25px;
       }
     }
   </style>
@@ -254,19 +256,20 @@
       <div class="container">
         <h2>Welcome to My Portfolio</h2>
         <p>
-          Ex-Intern at Wissen Infotech, Bangalore | Final Year CSE Student at Amrita School of Engineering,
-          Bangalore | Passionate about Software Development, Artificial Intelligence, and Research.
+          Ex-Intern at Wissen Infotech, Bangalore | Final Year CSE Student at Amrita School of Engineering, Bangalore.
+          Passionate about Software Development, Artificial Intelligence, and creating impactful solutions.
         </p>
       </div>
     </section>
 
     <section class="skills">
       <div class="container">
-        <h2>Skills</h2>
+        <h2>Skills & Technologies</h2>
         <ul>
           <li>Web Development</li>
           <li>HTML & CSS</li>
           <li>React</li>
+          <li>Angular</li>
           <li>Node.js</li>
           <li>Python</li>
           <li>Data Analysis</li>
@@ -281,7 +284,7 @@
       <div class="container">
         <h2>LeetCode Stats</h2>
         <p>
-          Check out my LeetCode progress
+          Track my problem-solving progress on LeetCode
           <a href="https://leetcode.com/progress/" target="_blank">here</a>.
         </p>
       </div>
@@ -291,7 +294,7 @@
       <div class="container">
         <h2>Google Scholar</h2>
         <p>
-          View my Google Scholar profile
+          Explore my publications and research
           <a href="https://scholar.google.com/citations?user=xtByF0sAAAAJ&hl=en&oi=ao" target="_blank">here</a>.
         </p>
       </div>
@@ -306,7 +309,7 @@
           <p><strong>Company:</strong> Wissen Infotech</p>
           <p><strong>Duration:</strong> Jun 2024 - Jul 2024</p>
           <p>
-            Completed a data science internship focusing on credit risk modeling and probability of default prediction.
+            Completed a data science internship focused on credit risk modeling and probability of default prediction.
             Worked on data preprocessing, feature selection, and logistic regression modeling.
           </p>
         </div>
@@ -316,7 +319,7 @@
           <p><strong>Company:</strong> NTT Data</p>
           <p><strong>Duration:</strong> Dec 2024 - Present</p>
           <p>
-            Working on developing and fine-tuning Large Language Models (LLMs) for real-world enterprise applications.
+            Developing and fine-tuning Large Language Models (LLMs) for enterprise applications.
             Focused on Natural Language Processing, model optimization, and prompt engineering.
           </p>
         </div>
@@ -325,8 +328,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2024 Aditya Vijjapu </p>
+    <p>&copy; 2025 Aditya Vijjapu</p>
   </footer>
 </body>
 </html>
-
