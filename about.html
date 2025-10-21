@@ -4,29 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aditya Vijjapu – About</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --gold: #ffd700;
+      --accent: #ff4081;
       --bg-dark: #0d0d0d;
       --card-bg: #1b1b1b;
       --text-light: #f5f5f5;
       --text-muted: #aaa;
-      --accent: #ff4081;
+      --transition: all 0.3s ease;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: "Poppins", sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-color: var(--bg-dark);
       color: var(--text-light);
       line-height: 1.6;
       scroll-behavior: smooth;
     }
 
-    a { color: var(--gold); text-decoration: none; transition: 0.3s; }
-    a:hover { color: #fff; }
+    a { color: var(--gold); text-decoration: none; transition: var(--transition); }
+    a:hover { color: var(--accent); text-decoration: underline; }
 
     header {
       display: flex; justify-content: space-between; align-items: center;
@@ -38,12 +39,17 @@
 
     nav ul { list-style: none; display: flex; gap: 30px; }
     nav a { font-weight: 500; color: var(--text-light); position: relative; }
-    nav a::after { content: ""; position: absolute; width: 0; height: 2px; left: 0; bottom: -5px; background: var(--gold); transition: 0.3s; }
+    nav a::after {
+      content: ""; position: absolute; width: 0; height: 2px; left: 0; bottom: -5px;
+      background: var(--gold); transition: var(--transition);
+    }
     nav a:hover::after, nav a.active::after { width: 100%; }
     nav a:hover, nav a.active { color: var(--accent); }
 
     section { padding: 80px 80px; max-width: 1200px; margin: auto; }
     h2.section-title { font-size: 2rem; color: var(--gold); margin-bottom: 40px; text-align: center; letter-spacing: 1px; }
+
+    p { color: var(--text-muted); margin-bottom: 15px; font-size: 1rem; }
 
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 
@@ -51,8 +57,8 @@
       background-color: var(--card-bg);
       padding: 25px;
       border-radius: 16px;
-      transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease;
       border: 1px solid #222;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease;
       cursor: pointer;
       opacity: 0;
       transform: translateY(40px);
@@ -63,41 +69,22 @@
     .card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15); }
 
     .card h3 { color: var(--accent); font-size: 1.3rem; margin-bottom: 10px; }
-    .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 6px; }
-    .card a { display: inline-block; margin-top: 10px; color: var(--gold); font-weight: 600; }
+    .card p { font-size: 0.95rem; margin-bottom: 6px; }
+    .card a { margin-top: 10px; font-weight: 600; }
 
-    /* Certification card logo style */
-    .cert-card {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
+    /* Certification card */
+    .cert-card { display: flex; align-items: center; gap: 15px; }
     .cert-card img {
-      width: 50px;
-      height: 50px;
-      object-fit: contain;
-      border-radius: 8px;
-      background: #111;
-      padding: 5px;
+      width: 50px; height: 50px; object-fit: contain;
+      border-radius: 8px; background: #111; padding: 5px;
       transition: transform 0.3s ease;
     }
-
-    .cert-card img:hover {
-      transform: scale(1.1);
-    }
-
-    .cert-details {
-      flex: 1;
-    }
+    .cert-card img:hover { transform: scale(1.1); }
+    .cert-details { flex: 1; }
 
     footer {
-      text-align: center;
-      padding: 40px 0;
-      border-top: 1px solid #222;
-      background-color: #000;
-      color: var(--text-muted);
-      font-size: 0.9rem;
+      text-align: center; padding: 40px 0; border-top: 1px solid #222;
+      background-color: #000; color: var(--text-muted); font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
@@ -123,19 +110,19 @@
   <section id="about-me">
     <h2 class="section-title">About Me</h2>
     <p>
-      As a  <strong>Computer Science and Engineering</strong> graduate from       <strong>Amrita Vishwa Vidyapeetham, Bangalore</strong>, passionate about building efficient and innovative software systems.
+      I am a <strong>Computer Science & Engineering</strong> graduate from <strong>Amrita Vishwa Vidyapeetham, Bangalore</strong>,
+      passionate about building innovative and efficient software systems.
     </p>
     <p>
-      My expertise spans <strong>software development, Angular, Node.js, machine learning, and data analysis</strong>, 
+      My expertise spans <strong>software development, Angular, Node.js, machine learning, and data analysis</strong>,
       enabling me to deliver scalable, high-quality solutions. I am seeking opportunities in <strong>software development, backend engineering, or cloud computing</strong>.
     </p>
   </section>
 
-  <!-- LICENSES & CERTIFICATIONS -->
   <section id="certifications">
     <h2 class="section-title">Licenses & Certifications</h2>
     <div class="grid">
-      <div class="card show">
+      <div class="card">
         <div class="cert-card">
           <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo">
           <div class="cert-details">
@@ -143,40 +130,37 @@
             <p><strong>Issuer:</strong> Google</p>
             <p><strong>Issued:</strong> Oct 2025</p>
             <p><strong>Credential ID:</strong> LJTTAI7A444W</p>
-      
           </div>
         </div>
       </div>
 
-      <div class="card show">
+      <div class="card">
         <div class="cert-card">
           <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Logo">
           <div class="cert-details">
             <h3>Containers & Kubernetes Essentials</h3>
             <p><strong>Issuer:</strong> IBM</p>
             <p><strong>Issued:</strong> May 2024</p>
-      
           </div>
         </div>
       </div>
 
-      <div class="card show">
+      <div class="card">
         <div class="cert-card">
-          <img src="https://imgs.search.brave.com/VeW7e5m6ML34p5hLC2gSVfRxR159tg2nPhtrm1cgm70/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY3JlZGx5LmNv/bS9zaXplLzIwMHgy/MDAvaW1hZ2VzLzI3/NjU0ZmNlLWZhOTMt/NGIwOS04N2EwLWU0/MWE3NTU3YWVkNi9i/bG9iLnBuZw" alt="Coursera Logo">
+          <img src="https://imgs.search.brave.com/VeW7e5m6ML34p5hLC2gSVfRxR159tg2nPhtrm1cgm70/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFnZXMuY3JlZGx5LmNvbS9zaXplLzIwMHgyMDAvaW1hZ2VzLzI3NjU0ZmNlLWZhOTMtNGIwOS04N2EwLWU0MWE3NTU3YWVkNi9ibG9iLnBuZw" alt="Coursera Logo">
           <div class="cert-details">
             <h3>Business Analysis & Process Management</h3>
             <p><strong>Issuer:</strong> Coursera Project Network</p>
             <p><strong>Issued:</strong> Apr 2024</p>
-       
           </div>
         </div>
       </div>
 
-      <div class="card show">
+      <div class="card">
         <div class="cert-card">
-          <img src="https://imgs.search.brave.com/9qV-hJ46QgnURIdewmyPL_KQbi6Z_G6eBbakwsSiVZ0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA1LzQyLzI5LzU3/LzM2MF9GXzU0MjI5/NTcwMV9mWlZkc0F1/VjVPQmpRMkJVRGhq/T1RCUjMySlRoTFJh/Ni5qcGc" alt="AWS Logo">
+          <img src="https://imgs.search.brave.com/9qV-hJ46QgnURIdewmyPL_KQbi6Z_G6eBbakwsSiVZ0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90NC5mdGNkbi5uZXQvanBnLzA1LzQyLzI5LzU3LzM2MF9GXzU0MjI5NTcwMV9mWlZkc0F1VjVPQmpRMkJVRGhqT1RCUjMySlRoTFJhNi5qcGc" alt="AWS Logo">
           <div class="cert-details">
-            <h3>AWS Academy Graduate - AWS Cloud Semester 1</h3>
+            <h3>AWS Academy Graduate – Cloud Semester 1</h3>
             <p><strong>Issuer:</strong> Amazon Web Services</p>
             <p><strong>Issued:</strong> Mar 2024</p>
             <a href="#" target="_blank">Show credential</a>
@@ -187,22 +171,19 @@
   </section>
 
   <footer>
-    <p>© 2025 Aditya Vijjapu</p>
+    <p>© 2025 Aditya Vijjapu </p>
   </footer>
 
   <script>
     const observer = new IntersectionObserver(
-      (entries) => {
+      entries => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
+          if (entry.isIntersecting) entry.target.classList.add('show');
         });
-      }, { threshold: 0.2 }
+      },
+      { threshold: 0.2 }
     );
-    document.querySelectorAll(".card").forEach(el => observer.observe(el));
+    document.querySelectorAll('.card').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
-
-
